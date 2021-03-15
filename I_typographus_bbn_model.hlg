@@ -1,0 +1,178 @@
+Mon Mar 15 16:51:45 2021
+
+
+Moral links:
+
+    Marrying slr and precipitation
+    Marrying soiltype and altitude
+    Marrying temperature and precipitation
+    Marrying temperature and slr
+    Marrying climate and specific_stand
+    Marrying Stand_age and share_pro
+    Marrying drght and share_pro
+    Marrying drght and Stand_age
+    Marrying predispo and climate
+    Marrying predispo and specific_stand
+
+
+Triangulating prime component with 4 members:
+    precipitation, slr, temperature, climate
+This component is a clique of cost 256
+
+Triangulating prime component with 3 members:
+    specific_stand, altitude, soiltype
+This component is a clique of cost 64
+
+Triangulating prime component with 4 members:
+    share_pro, Stand_age, drght, predispo
+This component is a clique of cost 256
+
+Triangulating prime component with 4 members:
+    C1, specific_stand, climate, predispo
+This component is a clique of cost 256
+
+
+Total cost of triangulation for all prime components is 832
+
+
+Elimination sequence:
+
+    temperature
+    slr
+    precipitation
+    drght
+    Stand_age
+    share_pro
+    C1
+    predispo
+    climate
+    soiltype
+    altitude
+    specific_stand
+
+
+Cliques:
+
+Clique 4, 3 members, table size = 64:
+    specific_stand, altitude, soiltype
+
+Clique 3, 4 members, table size = 256:
+    specific_stand, climate, predispo, C1
+
+Clique 2, 4 members, table size = 256:
+    predispo, share_pro, Stand_age, drght
+
+Clique 1, 4 members, table size = 256:
+    climate, precipitation, slr, temperature
+
+Total clique table size: 832
+
+
+The junction forest:
+
+Creating junction tree with clique 4 as root ...
+
+Cliques 3 and 4 linked, separator has 1 member and table size = 4:
+    specific_stand
+
+Cliques 2 and 3 linked, separator has 1 member and table size = 4:
+    predispo
+
+Cliques 1 and 3 linked, separator has 1 member and table size = 4:
+    climate
+
+
+Assignment of potentials to cliques:
+
+    Node precipitation assigned to clique 1
+    Node slr assigned to clique 1
+    Node C1 assigned to clique 3
+    Node specific_stand assigned to clique 4
+    Node altitude assigned to clique 4
+    Node soiltype assigned to clique 4
+    Node temperature assigned to clique 1
+    Node climate assigned to clique 1
+    Node share_pro assigned to clique 2
+    Node Stand_age assigned to clique 2
+    Node drght assigned to clique 2
+    Node predispo assigned to clique 2
+
+
+Checking conditional probability potentials:
+
+    No errors found
+
+
+Beliefs for chance nodes:
+
+    precipitation:
+	819.76 - 706.46 0.5
+	706.46 - 660.92 0.29
+	660.92 - 621.74 0.15
+	621.74 - 549.73 0.06
+
+    slr:
+	322000 - 864000 0.4
+	864000 - 956000 0.3
+	956000 - 1.021E6 0.2
+	1.021E6 - 1.1915E6 0.1
+
+    C1:
+	High       0.605451
+	Moderately high 0.209876
+	Moderately low 0.102223
+	Low        0.0824509
+
+    specific_stand:
+	High       0.307204
+	Moderately high 0.249487
+	Moderately low 0.233258
+	Low        0.210051
+
+    altitude:
+	600 - 490.44 0.4
+	490.44 - 439.8 0.3
+	439.8 - 391.57 0.2
+	391.57 - 292.7 0.1
+
+    soiltype:
+	0.5 - 1.5  0.3
+	1.5 - 2.5  0.3
+	2.5 - 3.5  0.2
+	3.5 - 4.5  0.2
+
+    temperature:
+	6.35 - 7.66 0.0555556
+	7.66 - 8.08 0.222222
+	8.08 - 8.5 0.277778
+	8.5 - 9.275 0.444444
+
+    climate:
+	High       0.572542
+	Moderately high 0.250914
+	Moderately low 0.125124
+	Low        0.0514191
+
+    share_pro:
+	0.5 - 1.5  0.1
+	1.5 - 2.5  0.2
+	2.5 - 3.5  0.2
+	3.5 - 4.5  0.5
+
+    Stand_age:
+	12.78 - 49.44 0.1
+	49.44 - 66.64 0.2
+	66.64 - 83.84 0.3
+	83.84 - 128.195 0.4
+
+    drght:
+	0.5 - 1.5  0.05
+	1.5 - 2.5  0.1
+	2.5 - 3.5  0.32
+	3.5 - 4.5  0.53
+
+    predispo:
+	High       0.590882
+	Moderately high 0.237702
+	Moderately low 0.0942071
+	Low        0.077209

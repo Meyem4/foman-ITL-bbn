@@ -1,0 +1,567 @@
+class I_typographus_bbn_model
+{
+    inputs = ();
+    outputs = ();
+    node_size = (80 40);
+    HR_realname_predispo_1 = "predispo_1";
+    HR_Group_2_Description = "";
+    HR_Group_2_Color = "51";
+    HR_Group_2_Name = "changed CPT";
+    HR_ToolBar_CDVT = "0";
+    HR_DBN_Use_BK = "0";
+    HR_Html_Desc = "0";
+    HR_HTML_Desc = "";
+    HR_Link_Groups_IDs = "";
+    HR_Groups_IDs = "1,2";
+    HR_Group_1_Description = "";
+    HR_Group_1_Color = "44";
+    HR_Group_1_Name = "changed CPT and order of states";
+    HR_Node_Label_Style = "0";
+    HR_realname_precipitation = "precipitation";
+    HR_realname_predispo = "predispo";
+    HR_realname_drght = "drght";
+    HR_realname_Stand_age = "Stand_age";
+    HR_realname_share_pro = "share_pro";
+    HR_realname_climate = "climate";
+    HR_realname_Precipitation = "Precipitation";
+    HR_realname_slr = "slr";
+    HR_realname_temperature = "temperature";
+    HR_realname_soiltype = "soiltype";
+    HR_realname_altitude = "altitude";
+    HR_realname_specific_stand = "specific_stand";
+    HR_realname_C1 = "C1";
+    HR_DBN_Num_Slices = "5";
+    HR_Utility_Link = "63";
+    HR_Probabilistic_Link = "63";
+    HR_Functional_Link = "63";
+    HR_Binding_Link = "63";
+    HR_Information_Arc = "63";
+    HR_Color_DiscreteFunction = "5";
+    HR_Desc = "";
+    HR_OOBN_CheckConsistency = "1";
+    HR_OOBN_FitExpand = "1";
+    HR_Zoom_ZoomFactor = "100";
+    HR_Groups_GroupColors = "";
+    HR_Groups_GroupNames = "";
+    HR_Groups_UserGroupsNo = "0";
+    HR_Color_Interface = "21";
+    HR_Color_Instance = "0";
+    HR_Color_Function = "4";
+    HR_Color_Utility = "36";
+    HR_Color_Decision = "17";
+    HR_Color_ContinuousChance = "48";
+    HR_Color_DiscreteChance = "16";
+    HR_Monitor_InitSD = "2";
+    HR_Monitor_Utility_Arrange = "0";
+    HR_Monitor_Mean_Variance = "1";
+    HR_Monitor_Chance_Utility = "1";
+    HR_Monitor_InitStates = "5";
+    HR_Monitor_OpenGraph = "0";
+    HR_Monitor_GraphPrecision = "100";
+    HR_Monitor_AutoUpdGraph = "0";
+    HR_Compile_MaxMinimalSeparators = "100000";
+    HR_Compile_ApproxEpsilon = "1.0E-5";
+    HR_Compile_Approximate = "0";
+    HR_Compile_SaveToMemory = "0";
+    HR_Compile_Compress = "0";
+    HR_Compile_TriangMethod = "0";
+    HR_Propagate_AutoNormal = "1";
+    HR_Propagate_AutoSum = "1";
+    HR_Propagate_Auto = "1";
+    HR_Font_Italic = "0";
+    HR_Font_Weight = "400";
+    HR_Font_Size = "-12";
+    HR_Font_Name = "javax.swing.plaf.FontUIResource[family=Tahoma,name=Tahoma,style=plain,size=13]";
+    HR_Grid_GridShow = "0";
+    HR_Grid_GridSnap = "0";
+    HR_Grid_Y = "40";
+    HR_Grid_X = "40";
+
+    node precipitation
+    {
+	label = "Precipitation \n(Millimeters/year)";
+	position = (781 124);
+	states = ("819.76 - 706.46" "706.46 - 660.92" "660.92 - 621.74" "621.74 - 549.73");
+	subtype = interval;
+	state_values = (549.73 621.74 660.92 706.46 819.79);
+	HR_HTML_Desc = "";
+	HR_Node_states = "values";
+	HR_LinkGroup = "[climate:0]";
+	HR_NodeSize = "(127, 57)";
+	HR_LinkMode = "[climate:0]";
+	HR_Group = "0";
+	HR_Desc = "";
+	HR_State_3 = "";
+	HR_State_2 = "";
+	HR_State_1 = "";
+	HR_State_0 = "";
+    }
+
+    node slr
+    {
+	label = "Solar radiation\n(Watt hours/m2)";
+	position = (642 127);
+	states = ("322000 - 864000" "864000 - 956000" "956000 - 1.021E6" "1.021E6 - 1.1915E6");
+	subtype = interval;
+	state_values = (322000 864000 956000 1021000 1191500);
+	HR_HTML_Desc = "";
+	HR_LinkMode = "[Infrastructure:0][climate:0]";
+	HR_NodeSize = "(129, 53)";
+	HR_Desc = "";
+	HR_State_3 = "";
+	HR_State_2 = "";
+	HR_State_1 = "";
+	HR_State_0 = "";
+	HR_LinkGroup = "[climate:0]";
+	HR_Node_states = "values";
+	HR_Group = "0";
+    }
+
+    node C1
+    {
+	label = "Bark beetle disturbance risk";
+	position = (681 533);
+	states = ("High" "Moderately high" "Moderately low" "Low");
+	HR_HTML_Desc = "";
+	HR_State_3 = "";
+	HR_State_2 = "";
+	HR_NodeSize = "(198, 64)";
+	HR_Group = "1";
+	HR_Desc = "";
+	HR_State_1 = "";
+	HR_State_0 = "";
+    }
+
+    node specific_stand
+    {
+	label = "Site specific stand";
+	position = (312 311);
+	states = ("High" "Moderately high" "Moderately low" "Low");
+	HR_LinkGroup = "[C1:0]";
+	HR_LinkMode = "[C1:0]";
+	HR_NodeSize = "(133, 44)";
+	HR_Desc = "";
+	HR_State_3 = "";
+	HR_State_2 = "";
+	HR_State_1 = "";
+	HR_State_0 = "";
+	HR_Group = "2";
+    }
+
+    node altitude
+    {
+	label = "Altitude (Meters)";
+	position = (307 129);
+	states = ("600 - 490.44" "490.44 - 439.8" "439.8 - 391.57" "391.57 - 292.7");
+	subtype = interval;
+	state_values = (275.19351 382.02742 437.70143 493.37544 658.894);
+	HR_HTML_Desc = "";
+	HR_Node_states = "values";
+	HR_LinkGroup = "[specific_stand:0]";
+	HR_NodeSize = "(117, 47)";
+	HR_Desc = "";
+	HR_State_3 = "";
+	HR_State_2 = "";
+	HR_State_1 = "";
+	HR_State_0 = "";
+	HR_LinkMode = "[C4:0][Marketpot:0][C14:0][specific_stand:0][C13:0]";
+	HR_Group = "0";
+    }
+
+    node soiltype
+    {
+	label = "Soil type\n(Categories)";
+	position = (160 129);
+	states = ("0.5 - 1.5" "1.5 - 2.5" "2.5 - 3.5" "3.5 - 4.5");
+	subtype = interval;
+	state_values = (0.5 1.5 2.5 3.5 4.5);
+	HR_HTML_Desc = "";
+	HR_Node_states = "values";
+	HR_LinkGroup = "[specific_stand:0]";
+	HR_NodeSize = "(107, 53)";
+	HR_Desc = "";
+	HR_State_3 = "";
+	HR_State_2 = "";
+	HR_State_1 = "";
+	HR_State_0 = "";
+	HR_LinkMode = "[C4:0][Marketpot:0][C14:0][specific_stand:0][C13:0]";
+	HR_Group = "0";
+    }
+
+    node temperature
+    {
+	label = "Temperature (\302\260C)";
+	position = (505 125);
+	states = ("6.35 - 7.66" "7.66 - 8.08" "8.08 - 8.5" "8.5 - 9.275");
+	subtype = interval;
+	state_values = (6.35 7.66 8.08 8.5 9.275);
+	HR_HTML_Desc = "";
+	HR_Node_states = "values";
+	HR_LinkGroup = "[climate:0]";
+	HR_NodeSize = "(110, 52)";
+	HR_State_0 = "";
+	HR_State_1 = "";
+	HR_State_2 = "";
+	HR_State_3 = "";
+	HR_Desc = "";
+	HR_LinkMode = "[Infrastructure:0][climate:0]";
+	HR_Group = "0";
+    }
+
+    node climate
+    {
+	label = "Climate";
+	position = (665 307);
+	states = ("High" "Moderately high" "Moderately low" "Low");
+	HR_LinkGroup = "[C1:0]";
+	HR_State_0 = "";
+	HR_State_1 = "";
+	HR_Desc = "";
+	HR_State_2 = "";
+	HR_State_3 = "";
+	HR_NodeSize = "(140, 45)";
+	HR_LinkMode = "[C1:0]";
+	HR_Group = "2";
+    }
+
+    node share_pro
+    {
+	label = "Proportion of Norway \nspruce (%)";
+	position = (936 118);
+	states = ("0.5 - 1.5" "1.5 - 2.5" "2.5 - 3.5" "3.5 - 4.5");
+	subtype = interval;
+	state_values = (0.5 1.5 2.5 3.5 4.5);
+	HR_HTML_Desc = "";
+	HR_Node_states = "values";
+	HR_LinkGroup = "[predispo:0]";
+	HR_State_0 = "";
+	HR_State_1 = "";
+	HR_State_2 = "";
+	HR_State_3 = "";
+	HR_Desc = "";
+	HR_NodeSize = "(146, 54)";
+	HR_LinkMode = "[C4:0][Marketpot:0][C14:0][predispo:0]";
+	HR_Group = "0";
+    }
+
+    node Stand_age
+    {
+	label = "Stand age (Years)";
+	position = (1083 117);
+	states = ("12.78 - 49.44" "49.44 - 66.64" "66.64 - 83.84" "83.84 - 128.195");
+	subtype = interval;
+	state_values = (12.78 49.44 66.64 83.84 128.195);
+	HR_HTML_Desc = "";
+	HR_Node_states = "values";
+	HR_LinkGroup = "[predispo:0]";
+	HR_State_0 = "";
+	HR_State_1 = "";
+	HR_State_2 = "";
+	HR_State_3 = "";
+	HR_Desc = "";
+	HR_NodeSize = "(127, 54)";
+	HR_LinkMode = "[C4:0][Marketpot:0][C14:0][predispo:0]";
+	HR_Group = "0";
+    }
+
+    node drght
+    {
+	label = "Drought (Categories)";
+	position = (1218 115);
+	states = ("0.5 - 1.5" "1.5 - 2.5" "2.5 - 3.5" "3.5 - 4.5");
+	subtype = interval;
+	state_values = (0.5 1.5 2.5 3.5 4.5);
+	HR_HTML_Desc = "";
+	HR_Node_states = "values";
+	HR_LinkGroup = "[predispo:0]";
+	HR_State_0 = "";
+	HR_State_1 = "";
+	HR_State_2 = "";
+	HR_State_3 = "";
+	HR_Desc = "";
+	HR_NodeSize = "(129, 56)";
+	HR_LinkMode = "[C4:0][Marketpot:0][C14:0][predispo:0]";
+	HR_Group = "0";
+    }
+
+    node predispo
+    {
+	label = "Predisposition";
+	position = (960 308);
+	states = ("High" "Moderately high" "Moderately low" "Low");
+	HR_HTML_Desc = "";
+	HR_LinkGroup = "[C1:0]";
+	HR_State_0 = "";
+	HR_State_1 = "";
+	HR_State_2 = "";
+	HR_State_3 = "";
+	HR_Desc = "";
+	HR_NodeSize = "(133, 44)";
+	HR_LinkMode = "[C1:0]";
+	HR_Group = "2";
+    }
+
+    potential (precipitation)
+    {
+	data = ( 0.5 0.29 0.15 0.06 );
+    }
+
+    potential (slr)
+    {
+	data = ( 0.4 0.3 0.2 0.1 );
+    }
+
+    potential (C1 | predispo climate specific_stand)
+    {
+	data = (((( 0.9 0.1 0 0 )	%  predispo=High  climate=High  specific_stand=High
+		  ( 0.773367 0.184422 0.0422109 0 )	%  predispo=High  climate=High  specific_stand=Moderately high
+		  ( 0.627791 0.220888 0.0939248 0.0573966 )	%  predispo=High  climate=High  specific_stand=Moderately low
+		  ( 0.501083 0.219147 0.139355 0.140415 ))	%  predispo=High  climate=High  specific_stand=Low
+		 (( 0.779894 0.180071 0.0400349 0 )	%  predispo=High  climate=Moderately high  specific_stand=High
+		  ( 0.653821 0.26412 0.0820596 0 )	%  predispo=High  climate=Moderately high  specific_stand=Moderately high
+		  ( 0.571523 0.238179 0.113745 0.0765528 )	%  predispo=High  climate=Moderately high  specific_stand=Moderately low
+		  ( 0.371031 0.256936 0.185011 0.187022 ))	%  predispo=High  climate=Moderately high  specific_stand=Low
+		 (( 0.642499 0.216251 0.0887503 0.0524992 )	%  predispo=High  climate=Moderately low  specific_stand=High
+		  ( 0.586797 0.2349 0.10829 0.0700131 )	%  predispo=High  climate=Moderately low  specific_stand=Moderately high
+		  ( 0.341455 0.265685 0.197059 0.1958 )	%  predispo=High  climate=Moderately low  specific_stand=Moderately low
+		  ( 0.220708 0.235433 0.241122 0.302737 ))	%  predispo=High  climate=Moderately low  specific_stand=Low
+		 (( 0.522338 0.217512 0.131725 0.128425 )	%  predispo=High  climate=Low  specific_stand=High
+		  ( 0.385201 0.25977 0.179779 0.17525 )	%  predispo=High  climate=Low  specific_stand=Moderately high
+		  ( 0.22534 0.237341 0.239487 0.297832 )	%  predispo=High  climate=Low  specific_stand=Moderately low
+		  ( 0.1351 0.20084 0.271353 0.392707 )))	%  predispo=High  climate=Low  specific_stand=Low
+		((( 0.846684 0.135544 0.017772 0 )	%  predispo=Moderately high  climate=High  specific_stand=High
+		  ( 0.720398 0.219735 0.0598671 0 )	%  predispo=Moderately high  climate=High  specific_stand=Moderately high
+		  ( 0.571523 0.238179 0.113745 0.0765528 )	%  predispo=Moderately high  climate=High  specific_stand=Moderately low
+		  ( 0.443331 0.226347 0.159984 0.170337 ))	%  predispo=Moderately high  climate=High  specific_stand=Low
+		 (( 0.726925 0.215383 0.0576915 0 )	%  predispo=Moderately high  climate=Moderately high  specific_stand=High
+		  ( 0.6 0.3 0.1 0 )	%  predispo=Moderately high  climate=Moderately high  specific_stand=Moderately high
+		  ( 0.431213 0.278902 0.163295 0.12659 )	%  predispo=Moderately high  climate=Moderately high  specific_stand=Moderately low
+		  ( 0.310295 0.24823 0.207443 0.234033 ))	%  predispo=Moderately high  climate=Moderately high  specific_stand=Low
+		 (( 0.586797 0.2349 0.10829 0.0700131 )	%  predispo=Moderately high  climate=Moderately low  specific_stand=High
+		  ( 0.439933 0.279992 0.160025 0.12005 )	%  predispo=Moderately high  climate=Moderately low  specific_stand=Moderately high
+		  ( 0.271146 0.258893 0.22332 0.24664 )	%  predispo=Moderately high  climate=Moderately low  specific_stand=Moderately low
+		  ( 0.341596 0.219179 0.19677 0.242455 ))	%  predispo=Moderately high  climate=Moderately low  specific_stand=Low
+		 (( 0.429568 0.233186 0.166307 0.170938 )	%  predispo=Moderately high  climate=Low  specific_stand=High
+		  ( 0.323647 0.251227 0.202538 0.222588 )	%  predispo=Moderately high  climate=Low  specific_stand=Moderately high
+		  ( 0.361227 0.220812 0.189681 0.22828 )	%  predispo=Moderately high  climate=Low  specific_stand=Moderately low
+		  ( 0.10546 0.185153 0.281373 0.428013 )))	%  predispo=Moderately high  climate=Low  specific_stand=Low
+		((( 0.792596 0.168943 0.035941 0.00251993 )	%  predispo=Moderately low  climate=High  specific_stand=High
+		  ( 0.74246 0.201484 0.0526997 0.00335674 )	%  predispo=Moderately low  climate=High  specific_stand=Moderately high
+		  ( 0.426733 0.278342 0.164975 0.12995 )	%  predispo=Moderately low  climate=High  specific_stand=Moderately low
+		  ( 0.356682 0.226247 0.191511 0.22556 ))	%  predispo=Moderately low  climate=High  specific_stand=Low
+		 (( 0.74246 0.201484 0.0526997 0.00335674 )	%  predispo=Moderately low  climate=Moderately high  specific_stand=High
+		  ( 0.528853 0.291107 0.12668 0.0533605 )	%  predispo=Moderately low  climate=Moderately high  specific_stand=Moderately high
+		  ( 0.360066 0.270008 0.189975 0.17995 )	%  predispo=Moderately low  climate=Moderately high  specific_stand=Moderately low
+		  ( 0.263521 0.235864 0.224654 0.275961 ))	%  predispo=Moderately low  climate=Moderately high  specific_stand=Low
+		 (( 0.435453 0.279432 0.161705 0.12341 )	%  predispo=Moderately low  climate=Moderately low  specific_stand=High
+		  ( 0.368786 0.271098 0.186705 0.17341 )	%  predispo=Moderately low  climate=Moderately low  specific_stand=Moderately high
+		  ( 0.2 0.25 0.25 0.3 )	%  predispo=Moderately low  climate=Moderately low  specific_stand=Moderately low
+		  ( 0.136705 0.207803 0.271098 0.384393 ))	%  predispo=Moderately low  climate=Moderately low  specific_stand=Low
+		 (( 0.406073 0.225106 0.173545 0.195275 )	%  predispo=Moderately low  climate=Low  specific_stand=High
+		  ( 0.275511 0.239134 0.220295 0.265061 )	%  predispo=Moderately low  climate=Low  specific_stand=Moderately high
+		  ( 0.139975 0.209983 0.270008 0.380033 )	%  predispo=Moderately low  climate=Low  specific_stand=Moderately low
+		  ( 0.0766796 0.167787 0.291107 0.464427 )))	%  predispo=Moderately low  climate=Low  specific_stand=Low
+		((( 0.737679 0.201121 0.05448 0.00672003 )	%  predispo=Low  climate=High  specific_stand=High
+		  ( 0.600987 0.257983 0.101901 0.039129 )	%  predispo=Low  climate=High  specific_stand=Moderately high
+		  ( 0.437171 0.24565 0.162761 0.154417 )	%  predispo=Low  climate=High  specific_stand=Moderately low
+		  ( 0.33544 0.217501 0.199008 0.248051 ))	%  predispo=Low  climate=High  specific_stand=Low
+		 (( 0.609087 0.255081 0.0989455 0.0368866 )	%  predispo=Low  climate=Moderately high  specific_stand=High
+		  ( 0.457706 0.282213 0.15336 0.10672 )	%  predispo=Low  climate=Moderately high  specific_stand=Moderately high
+		  ( 0.483399 0.254131 0.145255 0.117215 )	%  predispo=Low  climate=Moderately high  specific_stand=Moderately low
+		  ( 0.213831 0.221277 0.242471 0.322421 ))	%  predispo=Low  climate=Moderately high  specific_stand=Low
+		 (( 0.453311 0.244558 0.156872 0.145258 )	%  predispo=Low  climate=Moderately low  specific_stand=High
+		  ( 0.475756 0.255769 0.147984 0.120491 )	%  predispo=Low  climate=Moderately low  specific_stand=Moderately high
+		  ( 0.17332 0.232213 0.258893 0.335573 )	%  predispo=Low  climate=Moderately low  specific_stand=Moderately low
+		  ( 0.110025 0.190017 0.279992 0.419967 ))	%  predispo=Low  climate=Moderately low  specific_stand=Low
+		 (( 0.355072 0.219133 0.191919 0.233876 )	%  predispo=Low  climate=Low  specific_stand=High
+		  ( 0.224458 0.22482 0.238656 0.312066 )	%  predispo=Low  climate=Low  specific_stand=Moderately high
+		  ( 0.113295 0.192197 0.278902 0.415607 )	%  predispo=Low  climate=Low  specific_stand=Moderately low
+		  ( 0.05 0.15 0.3 0.5 ))));	%  predispo=Low  climate=Low  specific_stand=Low
+    }
+
+    potential (specific_stand | altitude soiltype)
+    {
+	data = ((( 0.418587 0.270366 0.179178 0.131869 )	%  altitude=600 - 490.44  soiltype=0.5 - 1.5
+		 ( 0.429589 0.269808 0.175374 0.125228 )	%  altitude=600 - 490.44  soiltype=1.5 - 2.5
+		 ( 0.457953 0.264015 0.164016 0.114016 )	%  altitude=600 - 490.44  soiltype=2.5 - 3.5
+		 ( 0.5 0.25 0.15 0.1 ))	%  altitude=600 - 490.44  soiltype=3.5 - 4.5
+		(( 0.256522 0.262247 0.255265 0.225965 )	%  altitude=490.44 - 439.8  soiltype=0.5 - 1.5
+		 ( 0.279923 0.271971 0.242043 0.206063 )	%  altitude=490.44 - 439.8  soiltype=1.5 - 2.5
+		 ( 0.35 0.3 0.2 0.15 )	%  altitude=490.44 - 439.8  soiltype=2.5 - 3.5
+		 ( 0.392044 0.285985 0.185986 0.135986 ))	%  altitude=490.44 - 439.8  soiltype=3.5 - 4.5
+		(( 0.0725435 0.181696 0.350002 0.395759 )	%  altitude=439.8 - 391.57  soiltype=0.5 - 1.5
+		 ( 0.1 0.2 0.35 0.35 )	%  altitude=439.8 - 391.57  soiltype=1.5 - 2.5
+		 ( 0.170074 0.228032 0.307953 0.293941 )	%  altitude=439.8 - 391.57  soiltype=2.5 - 3.5
+		 ( 0.276128 0.266837 0.254672 0.202363 ))	%  altitude=439.8 - 391.57  soiltype=3.5 - 4.5
+		(( 0.01 0.14 0.35 0.5 )	%  altitude=391.57 - 292.7  soiltype=0.5 - 1.5
+		 ( 0.0329973 0.155331 0.350001 0.461671 )	%  altitude=391.57 - 292.7  soiltype=1.5 - 2.5
+		 ( 0.108594 0.197807 0.332171 0.361429 )	%  altitude=391.57 - 292.7  soiltype=2.5 - 3.5
+		 ( 0.216071 0.239676 0.276271 0.267982 )));	%  altitude=391.57 - 292.7  soiltype=3.5 - 4.5
+    }
+
+    potential (altitude)
+    {
+	data = ( 0.4 0.3 0.2 0.1 );
+    }
+
+    potential (soiltype)
+    {
+	data = ( 0.3 0.3 0.2 0.2 );
+    }
+
+    potential (temperature)
+    {
+	data = ( 0.0555556 0.222222 0.277778 0.444444 );
+    }
+
+    potential (climate | precipitation slr temperature)
+    {
+	data = (((( 0.418152 0.265269 0.209668 0.106911 )	%  precipitation=819.76 - 706.46  slr=322000 - 864000  temperature=6.35 - 7.66
+		  ( 0.455941 0.266294 0.191997 0.0857683 )	%  precipitation=819.76 - 706.46  slr=322000 - 864000  temperature=7.66 - 8.08
+		  ( 0.554661 0.255686 0.133245 0.0564079 )	%  precipitation=819.76 - 706.46  slr=322000 - 864000  temperature=8.08 - 8.5
+		  ( 0.619417 0.241971 0.0979206 0.0406915 ))	%  precipitation=819.76 - 706.46  slr=322000 - 864000  temperature=8.5 - 9.275
+		 (( 0.485757 0.269859 0.180654 0.0637302 )	%  precipitation=819.76 - 706.46  slr=864000 - 956000  temperature=6.35 - 7.66
+		  ( 0.522605 0.26926 0.161843 0.0462917 )	%  precipitation=819.76 - 706.46  slr=864000 - 956000  temperature=7.66 - 8.08
+		  ( 0.709023 0.235261 0.0488974 0.0068191 )	%  precipitation=819.76 - 706.46  slr=864000 - 956000  temperature=8.08 - 8.5
+		  ( 0.665981 0.241231 0.0756017 0.0171861 ))	%  precipitation=819.76 - 706.46  slr=864000 - 956000  temperature=8.5 - 9.275
+		 (( 0.654574 0.248358 0.0765576 0.0205103 )	%  precipitation=819.76 - 706.46  slr=956000 - 1.021E6  temperature=6.35 - 7.66
+		  ( 0.677419 0.247657 0.0658345 0.00908941 )	%  precipitation=819.76 - 706.46  slr=956000 - 1.021E6  temperature=7.66 - 8.08
+		  ( 0.726079 0.236961 0.0369595 0 )	%  precipitation=819.76 - 706.46  slr=956000 - 1.021E6  temperature=8.08 - 8.5
+		  ( 0.752716 0.223643 0.0236408 0 ))	%  precipitation=819.76 - 706.46  slr=956000 - 1.021E6  temperature=8.5 - 9.275
+		 (( 0.715287 0.224808 0.0451268 0.0147785 )	%  precipitation=819.76 - 706.46  slr=1.021E6 - 1.1915E6  temperature=6.35 - 7.66
+		  ( 0.734271 0.223492 0.00624896 0.0359878 )	%  precipitation=819.76 - 706.46  slr=1.021E6 - 1.1915E6  temperature=7.66 - 8.08
+		  ( 0.772162 0.21392 0.0139183 0 )	%  precipitation=819.76 - 706.46  slr=1.021E6 - 1.1915E6  temperature=8.08 - 8.5
+		  ( 0.8 0.2 0 0 )))	%  precipitation=819.76 - 706.46  slr=1.021E6 - 1.1915E6  temperature=8.5 - 9.275
+		((( 0.245838 0.267711 0.29479 0.191662 )	%  precipitation=706.46 - 660.92  slr=322000 - 864000  temperature=6.35 - 7.66
+		  ( 0.324824 0.273983 0.261568 0.139625 )	%  precipitation=706.46 - 660.92  slr=322000 - 864000  temperature=7.66 - 8.08
+		  ( 0.440515 0.268116 0.197855 0.0935145 )	%  precipitation=706.46 - 660.92  slr=322000 - 864000  temperature=8.08 - 8.5
+		  ( 0.557435 0.254299 0.131858 0.0564078 ))	%  precipitation=706.46 - 660.92  slr=322000 - 864000  temperature=8.5 - 9.275
+		 (( 0.35853 0.284355 0.255085 0.10203 )	%  precipitation=706.46 - 660.92  slr=864000 - 956000  temperature=6.35 - 7.66
+		  ( 0.40001 0.287503 0.237493 0.0749947 )	%  precipitation=706.46 - 660.92  slr=864000 - 956000  temperature=7.66 - 8.08
+		  ( 0.511116 0.273614 0.168051 0.0472184 )	%  precipitation=706.46 - 660.92  slr=864000 - 956000  temperature=8.08 - 8.5
+		  ( 0.614439 0.255284 0.105279 0.0249979 ))	%  precipitation=706.46 - 660.92  slr=864000 - 956000  temperature=8.5 - 9.275
+		 (( 0.549083 0.26366 0.139114 0.0481426 )	%  precipitation=706.46 - 660.92  slr=956000 - 1.021E6  temperature=6.35 - 7.66
+		  ( 0.588896 0.263892 0.119439 0.0277734 )	%  precipitation=706.46 - 660.92  slr=956000 - 1.021E6  temperature=7.66 - 8.08
+		  ( 0.7 0.25 0.05 0 )	%  precipitation=706.46 - 660.92  slr=956000 - 1.021E6  temperature=8.08 - 8.5
+		  ( 0.7583 0.220851 0.0208491 0 ))	%  precipitation=706.46 - 660.92  slr=956000 - 1.021E6  temperature=8.5 - 9.275
+		 (( 0.676794 0.237248 0.0654475 0.0205103 )	%  precipitation=706.46 - 660.92  slr=1.021E6 - 1.1915E6  temperature=6.35 - 7.66
+		  ( 0.699639 0.236547 0.0547245 0.00908941 )	%  precipitation=706.46 - 660.92  slr=1.021E6 - 1.1915E6  temperature=7.66 - 8.08
+		  ( 0.752716 0.223643 0.0236408 0 )	%  precipitation=706.46 - 660.92  slr=1.021E6 - 1.1915E6  temperature=8.08 - 8.5
+		  ( 0.774936 0.212533 0.0125308 0 )))	%  precipitation=706.46 - 660.92  slr=1.021E6 - 1.1915E6  temperature=8.5 - 9.275
+		((( 0.150003 0.225002 0.3 0.324995 )	%  precipitation=660.92 - 621.74  slr=322000 - 864000  temperature=6.35 - 7.66
+		  ( 0.205557 0.252778 0.3 0.241665 )	%  precipitation=660.92 - 621.74  slr=322000 - 864000  temperature=7.66 - 8.08
+		  ( 0.335924 0.272596 0.25463 0.13685 )	%  precipitation=660.92 - 621.74  slr=322000 - 864000  temperature=8.08 - 8.5
+		  ( 0.471667 0.263409 0.182475 0.0824492 ))	%  precipitation=660.92 - 621.74  slr=322000 - 864000  temperature=8.5 - 9.275
+		 (( 0.244447 0.272223 0.3 0.18333 )	%  precipitation=660.92 - 621.74  slr=864000 - 956000  temperature=6.35 - 7.66
+		  ( 0.3 0.3 0.3 0.1 )	%  precipitation=660.92 - 621.74  slr=864000 - 956000  temperature=7.66 - 8.08
+		  ( 0.41111 0.286115 0.230555 0.0722201 )	%  precipitation=660.92 - 621.74  slr=864000 - 956000  temperature=8.08 - 8.5
+		  ( 0.537528 0.266423 0.15284 0.0432086 ))	%  precipitation=660.92 - 621.74  slr=864000 - 956000  temperature=8.5 - 9.275
+		 (( 0.44741 0.273245 0.199535 0.0798104 )	%  precipitation=660.92 - 621.74  slr=956000 - 1.021E6  temperature=6.35 - 7.66
+		  ( 0.488889 0.276393 0.181943 0.052775 )	%  precipitation=660.92 - 621.74  slr=956000 - 1.021E6  temperature=7.66 - 8.08
+		  ( 0.599996 0.262504 0.112501 0.0249984 )	%  precipitation=660.92 - 621.74  slr=956000 - 1.021E6  temperature=8.08 - 8.5
+		  ( 0.689578 0.244983 0.0586199 0.0068191 ))	%  precipitation=660.92 - 621.74  slr=956000 - 1.021E6  temperature=8.5 - 9.275
+		 (( 0.611677 0.246764 0.104406 0.0371537 )	%  precipitation=660.92 - 621.74  slr=1.021E6 - 1.1915E6  temperature=6.35 - 7.66
+		  ( 0.6421 0.246544 0.0897518 0.0216043 )	%  precipitation=660.92 - 621.74  slr=1.021E6 - 1.1915E6  temperature=7.66 - 8.08
+		  ( 0.709023 0.235261 0.0488974 0.0068191 )	%  precipitation=660.92 - 621.74  slr=1.021E6 - 1.1915E6  temperature=8.08 - 8.5
+		  ( 0.744017 0.22096 0.0303346 0.00468813 )))	%  precipitation=660.92 - 621.74  slr=1.021E6 - 1.1915E6  temperature=8.5 - 9.275
+		((( 0.1 0.2 0.3 0.4 )	%  precipitation=621.74 - 549.73  slr=322000 - 864000  temperature=6.35 - 7.66
+		  ( 0.155553 0.227777 0.3 0.31667 )	%  precipitation=621.74 - 549.73  slr=322000 - 864000  temperature=7.66 - 8.08
+		  ( 0.250925 0.269677 0.294212 0.185186 )	%  precipitation=621.74 - 549.73  slr=322000 - 864000  temperature=8.08 - 8.5
+		  ( 0.438986 0.262953 0.198093 0.0999677 ))	%  precipitation=621.74 - 549.73  slr=322000 - 864000  temperature=8.5 - 9.275
+		 (( 0.194443 0.247222 0.3 0.258335 )	%  precipitation=621.74 - 549.73  slr=864000 - 956000  temperature=6.35 - 7.66
+		  ( 0.249997 0.274998 0.3 0.175005 )	%  precipitation=621.74 - 549.73  slr=864000 - 956000  temperature=7.66 - 8.08
+		  ( 0.37444 0.284447 0.247223 0.0938903 )	%  precipitation=621.74 - 549.73  slr=864000 - 956000  temperature=8.08 - 8.5
+		  ( 0.505738 0.267483 0.169513 0.0572661 ))	%  precipitation=621.74 - 549.73  slr=864000 - 956000  temperature=8.5 - 9.275
+		 (( 0.286575 0.283451 0.29016 0.139814 )	%  precipitation=621.74 - 549.73  slr=956000 - 1.021E6  temperature=6.35 - 7.66
+		  ( 0.45222 0.274725 0.19861 0.0744453 )	%  precipitation=621.74 - 549.73  slr=956000 - 1.021E6  temperature=7.66 - 8.08
+		  ( 0.564577 0.263024 0.130731 0.0416675 )	%  precipitation=621.74 - 549.73  slr=956000 - 1.021E6  temperature=8.08 - 8.5
+		  ( 0.671608 0.245925 0.0670802 0.0153873 ))	%  precipitation=621.74 - 549.73  slr=956000 - 1.021E6  temperature=8.5 - 9.275
+		 (( 0.58487 0.246741 0.117047 0.051342 )	%  precipitation=621.74 - 549.73  slr=1.021E6 - 1.1915E6  temperature=6.35 - 7.66
+		  ( 0.615932 0.247273 0.102787 0.0340087 )	%  precipitation=621.74 - 549.73  slr=1.021E6 - 1.1915E6  temperature=7.66 - 8.08
+		  ( 0.691053 0.236202 0.0573577 0.0153873 )	%  precipitation=621.74 - 549.73  slr=1.021E6 - 1.1915E6  temperature=8.08 - 8.5
+		  ( 0.72895 0.222362 0.0376026 0.0110853 ))));	%  precipitation=621.74 - 549.73  slr=1.021E6 - 1.1915E6  temperature=8.5 - 9.275
+    }
+
+    potential (share_pro)
+    {
+	data = ( 0.1 0.2 0.2 0.5 );
+    }
+
+    potential (Stand_age)
+    {
+	data = ( 0.1 0.2 0.3 0.4 );
+    }
+
+    potential (drght)
+    {
+	data = ( 0.05 0.1 0.32 0.53 );
+    }
+
+    potential (predispo | share_pro drght Stand_age)
+    {
+	data = (((( 0 0.05 0.3 0.65 )	%  share_pro=0.5 - 1.5  drght=0.5 - 1.5  Stand_age=12.78 - 49.44
+		  ( 0.0296666 0.0945 0.3 0.575833 )	%  share_pro=0.5 - 1.5  drght=0.5 - 1.5  Stand_age=49.44 - 66.64
+		  ( 0.0983332 0.134125 0.2805 0.487042 )	%  share_pro=0.5 - 1.5  drght=0.5 - 1.5  Stand_age=66.64 - 83.84
+		  ( 0.173705 0.157536 0.254421 0.414338 ))	%  share_pro=0.5 - 1.5  drght=0.5 - 1.5  Stand_age=83.84 - 128.195
+		 (( 0.0481666 0.12225 0.3 0.529583 )	%  share_pro=0.5 - 1.5  drght=1.5 - 2.5  Stand_age=12.78 - 49.44
+		  ( 0.0778333 0.16675 0.3 0.455417 )	%  share_pro=0.5 - 1.5  drght=1.5 - 2.5  Stand_age=49.44 - 66.64
+		  ( 0.405529 0.23901 0.174632 0.180829 )	%  share_pro=0.5 - 1.5  drght=1.5 - 2.5  Stand_age=66.64 - 83.84
+		  ( 0.278983 0.219501 0.225195 0.276321 ))	%  share_pro=0.5 - 1.5  drght=1.5 - 2.5  Stand_age=83.84 - 128.195
+		 (( 0.190833 0.182687 0.25275 0.37373 )	%  share_pro=0.5 - 1.5  drght=2.5 - 3.5  Stand_age=12.78 - 49.44
+		  ( 0.34064 0.239004 0.202441 0.217915 )	%  share_pro=0.5 - 1.5  drght=2.5 - 3.5  Stand_age=49.44 - 66.64
+		  ( 0.394833 0.253604 0.180417 0.171146 )	%  share_pro=0.5 - 1.5  drght=2.5 - 3.5  Stand_age=66.64 - 83.84
+		  ( 0.510643 0.264178 0.132471 0.0927075 ))	%  share_pro=0.5 - 1.5  drght=2.5 - 3.5  Stand_age=83.84 - 128.195
+		 (( 0.275652 0.213035 0.226583 0.284731 )	%  share_pro=0.5 - 1.5  drght=3.5 - 4.5  Stand_age=12.78 - 49.44
+		  ( 0.430754 0.234296 0.162264 0.172686 )	%  share_pro=0.5 - 1.5  drght=3.5 - 4.5  Stand_age=49.44 - 66.64
+		  ( 0.561556 0.254921 0.109329 0.0741934 )	%  share_pro=0.5 - 1.5  drght=3.5 - 4.5  Stand_age=66.64 - 83.84
+		  ( 0.645 0.243125 0.0719998 0.039875 )))	%  share_pro=0.5 - 1.5  drght=3.5 - 4.5  Stand_age=83.84 - 128.195
+		((( 0.0221666 0.08325 0.3 0.594583 )	%  share_pro=1.5 - 2.5  drght=0.5 - 1.5  Stand_age=12.78 - 49.44
+		  ( 0.0518333 0.12775 0.3 0.520417 )	%  share_pro=1.5 - 2.5  drght=0.5 - 1.5  Stand_age=49.44 - 66.64
+		  ( 0.180335 0.171263 0.254716 0.393685 )	%  share_pro=1.5 - 2.5  drght=0.5 - 1.5  Stand_age=66.64 - 83.84
+		  ( 0.209358 0.182047 0.245507 0.363087 ))	%  share_pro=1.5 - 2.5  drght=0.5 - 1.5  Stand_age=83.84 - 128.195
+		 (( 0.0703333 0.1555 0.3 0.474167 )	%  share_pro=1.5 - 2.5  drght=1.5 - 2.5  Stand_age=12.78 - 49.44
+		  ( 0.1 0.2 0.3 0.4 )	%  share_pro=1.5 - 2.5  drght=1.5 - 2.5  Stand_age=49.44 - 66.64
+		  ( 0.248333 0.229667 0.240667 0.281334 )	%  share_pro=1.5 - 2.5  drght=1.5 - 2.5  Stand_age=66.64 - 83.84
+		  ( 0.331666 0.246333 0.207334 0.214667 ))	%  share_pro=1.5 - 2.5  drght=1.5 - 2.5  Stand_age=83.84 - 128.195
+		 (( 0.291317 0.217505 0.217722 0.273455 )	%  share_pro=1.5 - 2.5  drght=2.5 - 3.5  Stand_age=12.78 - 49.44
+		  ( 0.340833 0.248167 0.203667 0.207334 )	%  share_pro=1.5 - 2.5  drght=2.5 - 3.5  Stand_age=49.44 - 66.64
+		  ( 0.489166 0.277833 0.144334 0.0886674 )	%  share_pro=1.5 - 2.5  drght=2.5 - 3.5  Stand_age=66.64 - 83.84
+		  ( 0.661712 0.249911 0.0663963 0.0219805 ))	%  share_pro=1.5 - 2.5  drght=2.5 - 3.5  Stand_age=83.84 - 128.195
+		 (( 0.415754 0.223984 0.166014 0.194248 )	%  share_pro=1.5 - 2.5  drght=3.5 - 4.5  Stand_age=12.78 - 49.44
+		  ( 0.424166 0.264833 0.170334 0.140667 )	%  share_pro=1.5 - 2.5  drght=3.5 - 4.5  Stand_age=49.44 - 66.64
+		  ( 0.661712 0.249911 0.0663963 0.0219805 )	%  share_pro=1.5 - 2.5  drght=3.5 - 4.5  Stand_age=66.64 - 83.84
+		  ( 0.699048 0.236041 0.0484139 0.0164972 )))	%  share_pro=1.5 - 2.5  drght=3.5 - 4.5  Stand_age=83.84 - 128.195
+		((( 0.0608332 0.114437 0.29175 0.532979 )	%  share_pro=2.5 - 3.5  drght=0.5 - 1.5  Stand_age=12.78 - 49.44
+		  ( 0.206692 0.17128 0.243425 0.378602 )	%  share_pro=2.5 - 3.5  drght=0.5 - 1.5  Stand_age=49.44 - 66.64
+		  ( 0.212833 0.191854 0.245417 0.349896 )	%  share_pro=2.5 - 3.5  drght=0.5 - 1.5  Stand_age=66.64 - 83.84
+		  ( 0.313043 0.204378 0.205271 0.277307 ))	%  share_pro=2.5 - 3.5  drght=0.5 - 1.5  Stand_age=83.84 - 128.195
+		 (( 0.38255 0.21753 0.178628 0.221291 )	%  share_pro=2.5 - 3.5  drght=1.5 - 2.5  Stand_age=12.78 - 49.44
+		  ( 0.210833 0.222167 0.255667 0.311334 )	%  share_pro=2.5 - 3.5  drght=1.5 - 2.5  Stand_age=49.44 - 66.64
+		  ( 0.359154 0.251825 0.196328 0.192694 )	%  share_pro=2.5 - 3.5  drght=1.5 - 2.5  Stand_age=66.64 - 83.84
+		  ( 0.479656 0.249963 0.144429 0.125953 ))	%  share_pro=2.5 - 3.5  drght=1.5 - 2.5  Stand_age=83.84 - 128.195
+		 (( 0.342333 0.235792 0.199167 0.222709 )	%  share_pro=2.5 - 3.5  drght=2.5 - 3.5  Stand_age=12.78 - 49.44
+		  ( 0.451666 0.270333 0.159334 0.118667 )	%  share_pro=2.5 - 3.5  drght=2.5 - 3.5  Stand_age=49.44 - 66.64
+		  ( 0.6 0.3 0.1 0 )	%  share_pro=2.5 - 3.5  drght=2.5 - 3.5  Stand_age=66.64 - 83.84
+		  ( 0.659604 0.270198 0.0701979 0 ))	%  share_pro=2.5 - 3.5  drght=2.5 - 3.5  Stand_age=83.84 - 128.195
+		 (( 0.504557 0.237671 0.130329 0.127443 )	%  share_pro=2.5 - 3.5  drght=3.5 - 4.5  Stand_age=12.78 - 49.44
+		  ( 0.587515 0.241024 0.0857307 0.0857307 )	%  share_pro=2.5 - 3.5  drght=3.5 - 4.5  Stand_age=49.44 - 66.64
+		  ( 0.696532 0.251734 0.0517338 0 )	%  share_pro=2.5 - 3.5  drght=3.5 - 4.5  Stand_age=66.64 - 83.84
+		  ( 0.755662 0.222169 0.0221692 0 )))	%  share_pro=2.5 - 3.5  drght=3.5 - 4.5  Stand_age=83.84 - 128.195
+		((( 0.102349 0.138768 0.280712 0.478171 )	%  share_pro=3.5 - 4.5  drght=0.5 - 1.5  Stand_age=12.78 - 49.44
+		  ( 0.165454 0.177753 0.263708 0.393086 )	%  share_pro=3.5 - 4.5  drght=0.5 - 1.5  Stand_age=49.44 - 66.64
+		  ( 0.292403 0.208131 0.214653 0.284813 )	%  share_pro=3.5 - 4.5  drght=0.5 - 1.5  Stand_age=66.64 - 83.84
+		  ( 0.385 0.210625 0.176 0.228375 ))	%  share_pro=3.5 - 4.5  drght=0.5 - 1.5  Stand_age=83.84 - 128.195
+		 (( 0.202454 0.20319 0.254458 0.339898 )	%  share_pro=3.5 - 4.5  drght=1.5 - 2.5  Stand_age=12.78 - 49.44
+		  ( 0.309302 0.236081 0.215453 0.239163 )	%  share_pro=3.5 - 4.5  drght=1.5 - 2.5  Stand_age=49.44 - 66.64
+		  ( 0.479656 0.249963 0.144429 0.125953 )	%  share_pro=3.5 - 4.5  drght=1.5 - 2.5  Stand_age=66.64 - 83.84
+		  ( 0.536612 0.249089 0.119893 0.0944065 ))	%  share_pro=3.5 - 4.5  drght=1.5 - 2.5  Stand_age=83.84 - 128.195
+		 (( 0.433002 0.250681 0.162853 0.153463 )	%  share_pro=3.5 - 4.5  drght=2.5 - 3.5  Stand_age=12.78 - 49.44
+		  ( 0.609215 0.249926 0.0888972 0.0519617 )	%  share_pro=3.5 - 4.5  drght=2.5 - 3.5  Stand_age=49.44 - 66.64
+		  ( 0.644628 0.277686 0.0776857 0 )	%  share_pro=3.5 - 4.5  drght=2.5 - 3.5  Stand_age=66.64 - 83.84
+		  ( 0.703674 0.248163 0.0481629 0 ))	%  share_pro=3.5 - 4.5  drght=2.5 - 3.5  Stand_age=83.84 - 128.195
+		 (( 0.57 0.23375 0.102 0.0942501 )	%  share_pro=3.5 - 4.5  drght=3.5 - 4.5  Stand_age=12.78 - 49.44
+		  ( 0.652164 0.239807 0.0690449 0.0389841 )	%  share_pro=3.5 - 4.5  drght=3.5 - 4.5  Stand_age=49.44 - 66.64
+		  ( 0.740627 0.229687 0.0296864 0 )	%  share_pro=3.5 - 4.5  drght=3.5 - 4.5  Stand_age=66.64 - 83.84
+		  ( 0.8 0.2 0 0 ))));	%  share_pro=3.5 - 4.5  drght=3.5 - 4.5  Stand_age=83.84 - 128.195
+    }
+} % class I_typographus_bbn_model
